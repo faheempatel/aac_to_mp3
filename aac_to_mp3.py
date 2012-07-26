@@ -5,8 +5,8 @@ import os.path
 import sys
 import subprocess
 
-#OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
-OUTPUT_DIR = '/home/faheem/test/'
+OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
+#OUTPUT_DIR = '/home/faheem/test/'
 
 def convert_and_save(path):
     filenames = [
@@ -28,8 +28,8 @@ def convert_and_save(path):
             ])
 
 def flat_file(text_file):
-    for directory in text_file:
-        convert_and_save(directory.strip('\n'))
+    for path in text_file:
+        convert_and_save(path.strip('\n'))
 
     return 0
 
