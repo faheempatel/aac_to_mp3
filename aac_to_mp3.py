@@ -5,11 +5,11 @@ import os.path
 import sys
 import subprocess
 
-OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
+#OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
+OUTPUT_DIR = 'c:/test/'
 
-def main():
-    path = os.getcwd()
-    filenames = [
+def covert_and_save(path):
+     filenames = [
         filename
         for filename
         in os.listdir(path)
@@ -17,13 +17,26 @@ def main():
         ]
 
     for filename in filenames:
+        source = os.path.join(path, filename)
+        destination = os.path.join(OUTPUT_DIR, '%s.mp3' % filename[:-4])
+
         subprocess.call([
             "ffmpeg", "-i",
-            os.path.join(path, filename),
+            source,
             "-acodec", "libmp3lame", "-ab", "256k",
-            os.path.join(OUTPUT_DIR, '%s.mp3' % filename[:-4])
+            destination)
             ])
-    
+
+def flat_file(text_file):
+    for dir in text_file:
+        convert_and_save(dir)
+
+    return 0
+
+def main():
+    path = os.getcwd()
+    convert_and_save(path)    
+
     return 0
 
 if __name__ == '__main__':
