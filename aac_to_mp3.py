@@ -6,7 +6,7 @@ import sys
 import subprocess
 
 #OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
-OUTPUT_DIR = 'home/faheem/test/'
+OUTPUT_DIR = '/home/faheem/test/'
 
 def convert_and_save(path):
      filenames = [
@@ -40,5 +40,10 @@ def main():
     return 0
 
 if __name__ == '__main__':
+    #f = open('/home/faheem/dirs.txt', 'r')
+    #status = flat_file(f)
+    #sys.exit(status)
+    #f.close()
+
     status = main()
     sys.exit(status)
