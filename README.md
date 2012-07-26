@@ -8,7 +8,7 @@ A Python script for converting the AAC files (.mp4) in a directory to MP3 (.mp3)
 To-do:
 
 - Multi-threading (important)
-- Flat file input and directory args
+- ~~Flat file input~~ and directory args
 - Command line flags for silent mode
 - Customisable bit-rates
 - Error handling
