@@ -8,7 +8,7 @@ import subprocess
 #OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
 OUTPUT_DIR = 'c:/test/'
 
-def covert_and_save(path):
+def convert_and_save(path):
      filenames = [
         filename
         for filename
