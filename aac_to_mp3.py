@@ -6,7 +6,7 @@ import sys
 import subprocess
 
 #OUTPUT_DIR = '/Users/matt/Desktop/mp3/'
-OUTPUT_DIR = 'c:/test/'
+OUTPUT_DIR = 'home/faheem/test/'
 
 def convert_and_save(path):
      filenames = [
@@ -24,12 +24,12 @@ def convert_and_save(path):
             "ffmpeg", "-i",
             source,
             "-acodec", "libmp3lame", "-ab", "256k",
-            destination)
+            destination
             ])
 
 def flat_file(text_file):
-    for dir in text_file:
-        convert_and_save(dir)
+    for directory in text_file:
+        convert_and_save(directory.strip('\n'))
 
     return 0
 
